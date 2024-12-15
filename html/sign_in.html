@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="auth_page active">
+      <div class="sign_in_container">
+        <div class="logo">
+          <img src="../images/logo.png" alt="" />
+        </div>
+        <p class="store_name">Green Haven</p>
+        <p>Sign in or create an account to start your journey</p>
+        <div class="switch_container">
+          <button class="sign_in">Sign In</button>
+          <button class="sign_up">Sign Up</button>
+        </div>
+        <div class="auth_container">
+          <form action="" class="sign_in_form">
+            <div>
+              <label for="email_sign_in">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email_sign_in"
+                placeholder="a@example.com"
+              />
+              <label for="password_sign_in">Password</label>
+              <input type="password" id="password_sign_in" name="password" />
+            </div>
+            <button type="submit">Sign In</button>
+          </form>
+          <form action="" class="sign_up_form">
+            <div>
+              <label for="name_input">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name_input"
+                placeholder="Name"
+              />
+              <label for="email_sign_up">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email_sign_up"
+                placeholder="a@example.com"
+              />
+              <label for="password_sign_up">Password</label>
+              <input type="password" id="password_sign_up" name="password" />
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <p>By signing in/up, you agree to our Terms and Privacy Policy</p>
+      </div>
+    </div>
+    <script src="../js/sign_in.js"></script>
+  </body>
+</html>
