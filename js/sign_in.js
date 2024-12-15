@@ -9,9 +9,50 @@ function switchSignIn() {
   }
 }
 
+function setCookie(name, value) {
+  const now = new Date();
+  now.setTime(now.getTime() + 60 * 60 * 1000); // Expiry time in ms
+  document.cookie = `${name}=${value}; expires=${now.toUTCString()}; path=/`;
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) {
+      return value;
+    }
+  }
+  return null; // If not found
+}
+
 const auth_switch = document.getElementsByClassName("switch_container")[0];
 auth_switch.addEventListener("click", (e) => {
   switchSignIn();
+});
+
+const signInForm = document.getElementsByClassName("sign_in_form")[0];
+signInForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email_sign_in").value;
+
+  const formData = new FormData(signInForm);
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "../php/signIn.php", true);
+
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      if (!xhr.responseText.includes("fail")) {
+        setCookie("token", xhr.responseText);
+        setCookie("email", email);
+      }
+    } else {
+      alert("Failed To Make Request");
+    }
+  };
+
+  xhr.send(formData);
 });
 
 const signUpForm = document.getElementsByClassName("sign_up_form")[0];
