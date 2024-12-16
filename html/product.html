@@ -25,11 +25,31 @@
         <span></span>
         <span></span>
       </div>
-      <ul class="links">
-        <a> <li>Home</li></a>
-        <a> <li>About us</li></a>
-        <a> <li>Contact us</li></a>
-      </ul>
+      <div class="nav_options">
+        <ul class="links">
+          <a> <li>Home</li></a>
+          <a> <li>About us</li></a>
+          <a> <li>Contact us</li></a>
+        </ul>
+        <div class="profile">
+          <div class="profile_button">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <ul class="profile_info">
+            <li>
+              <div class="image">
+                <img src="../images/logo.png" alt="" />
+              </div>
+            </li>
+            <li>
+              <p>Name</p>
+            </li>
+            <li>
+              <button id="log_out_btn">Log out</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div class="page_container">
       <div class="product_section"></div>
@@ -102,6 +122,7 @@
         </div>
       --></div>
     </div>
+    <script src="../js/auth_service.js"></script>
     <script src="../js/product.js"></script>
     <script src="../js/nav.js"></script>
   </body>

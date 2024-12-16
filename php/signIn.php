@@ -18,7 +18,6 @@ if($r->num_rows==1){
     $stmt->bind_param("s",$email);
 
     if($stmt->execute()){
-
         $token = generateToken();
         $expiry = date('Y-m-d H:i:s', strtotime('+1 hour'));
         
@@ -34,6 +33,6 @@ if($r->num_rows==1){
         echo "fail";
     }
 }else{
-    "fail: Invalid Credentials";
+    echo "fail: Invalid Credentials";
 }
 ?>
