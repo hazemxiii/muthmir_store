@@ -54,7 +54,7 @@ nav ul {
     top: 80px;
   }
   nav ul.links.active {
-    max-height: 200px;
+    max-height: 250px;
     padding: 10px;
   }
   nav ul.links a {
@@ -108,12 +108,10 @@ nav .profile_info {
   justify-content: center;
   padding: 10px;
   border-radius: 3px;
-  z-index: 2;
+  z-index: 3;
   display: none;
 }
-nav .profile .profile_button {
-  cursor: pointer;
-}
+
 nav .profile_info .image {
   border-radius: 5px;
   overflow: hidden;
@@ -125,11 +123,11 @@ nav .profile_info img {
 nav .profile_info.active {
   display: flex;
 }
-nav .profile li {
+nav .profile_info li {
   width: 100%;
   text-align: center;
 }
-nav .profile button {
+nav .profile_info button {
   background-color: var(--main-c);
   color: white;
   border: none;
