@@ -9,21 +9,12 @@ function switchSignIn() {
   }
 }
 
-function setCookie(name, value) {
-  const now = new Date();
-  now.setTime(now.getTime() + 60 * 60 * 1000); // Expiry time in ms
-  document.cookie = `${name}=${value}; expires=${now.toUTCString()}; path=/`;
-}
-
-function getCookie(name) {
-  const cookies = document.cookie.split("; ");
-  for (let cookie of cookies) {
-    const [key, value] = cookie.split("=");
-    if (key === name) {
-      return value;
+function signIn() {
+  LoadUserData().then((data) => {
+    if (data != null) {
+      location.href = "../html/product.html";
     }
-  }
-  return null; // If not found
+  });
 }
 
 const auth_switch = document.getElementsByClassName("switch_container")[0];
@@ -46,6 +37,9 @@ signInForm.addEventListener("submit", (e) => {
       if (!xhr.responseText.includes("fail")) {
         setCookie("token", xhr.responseText);
         setCookie("email", email);
+        signIn();
+      } else {
+        alert(xhr.responseText);
       }
     } else {
       alert("Failed To Make Request");
