@@ -101,6 +101,8 @@
 .rating {
   margin-bottom: 10px;
   border-bottom: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
 }
 .rating .user_info {
   display: flex;
@@ -110,4 +112,32 @@
   color: grey;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+.rating.current {
+  background-color: rgb(180, 255, 201);
+}
+#rating_form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#rating_form button {
+  background-color: var(--main-c);
+  padding: 5px 0px;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+#rating_form input {
+  padding: 5px;
+  outline: none;
+  border: 2px solid var(--main-c);
+  border-radius: 5px;
+  font-size: 18px;
+  color: var(--main-c);
 }
