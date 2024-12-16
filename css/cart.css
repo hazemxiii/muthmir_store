@@ -1,0 +1,153 @@
+h1,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+}
+
+.checkout:hover {
+  background-color: #555;
+}
+
+.checkout-container {
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 98.4px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 257px);
+  overflow-y: scroll;
+}
+
+h1 {
+  text-align: center;
+}
+
+.prod-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prod {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+.prod-img {
+  width: 80px;
+  height: 80px;
+  background: url("../assets/images/item.png") no-repeat;
+  background-size: cover;
+
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.prod-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-v-or-s,
+.prod-title,
+.prod-price {
+  margin-bottom: 4px;
+}
+
+.prod-v-or-s {
+  font-size: 14px;
+  color: #666;
+}
+
+.prod-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.prod-price {
+  font-size: 16px;
+  color: #e53935;
+}
+
+.prod-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.increment,
+.decrement {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.increment:hover,
+.decrement:hover {
+  background-color: #555;
+}
+
+.prod-quantity {
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.rem-quan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.remove {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+}
+
+.remove:hover {
+  background-color: #555;
+}
