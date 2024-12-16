@@ -1,39 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Muthmir Store</title>
-    <link rel="stylesheet" href="../css/about.css">
-</head>
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-    <main>
-        <section class="about">
-            <h1>About Us</h1>
-            <p>Welcome to Muthmir Store, your trusted source for premium agricultural supplies. We are dedicated to
-                providing high-quality products and exceptional service to help you achieve your farming goals.</p>
-            <h2>Our Mission</h2>
-            <p>To empower farmers and agricultural professionals with the best tools and supplies for sustainable and
-                productive farming practices.</p>
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>High-quality products sourced from trusted suppliers</li>
-                <li>Expert customer support for all your needs</li>
-                <li>Commitment to sustainability and innovation</li>
-            </ul>
-            <h2>Our Products</h2>
-            <p>Explore some of our top products that support your agricultural success:</p>
-            <div class="image-container">
-                <img src="../images/a-1.jpg" alt="Product 1">
-                <img src="../images/a-2.jpg" alt="Product 2">
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../images/logo.png" alt="" />
+        <h3>Green Haven</h3>
+      </div>
+      <div class="toggle_links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="links">
+        <a href="index.html"> <li>Home</li></a>
+        <a href="#" class="active"> <li>About us</li></a>
+        <a href="contact.html"> <li>Contact us</li></a>
+        <a id="profile_button" href="#">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+        <ul class="profile_info">
+          <li>
+            <div class="image">
+              <img src="../images/logo.png" alt="" />
             </div>
-            <h2>Contact Us</h2>
-            <p>If you have any questions, please feel free to <a href="contact.html">contact us</a>. We are here to
-                help!</p>
-        </section>
-    </main>
-</body>
+          </li>
+          <li>
+            <p>Name</p>
+          </li>
+          <li>
+            <button id="log_out_btn">Log out</button>
+          </li>
+        </ul>
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a>
+      </ul>
+    </nav>
 
+    <main>
+      <section class="about">
+        <h1>About Us</h1>
+        <p>
+          Welcome to Muthmir Store, your trusted source for premium agricultural
+          supplies. We are dedicated to providing high-quality products and
+          exceptional service to help you achieve your farming goals.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+          To empower farmers and agricultural professionals with the best tools
+          and supplies for sustainable and productive farming practices.
+        </p>
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>High-quality products sourced from trusted suppliers</li>
+          <li>Expert customer support for all your needs</li>
+          <li>Commitment to sustainability and innovation</li>
+        </ul>
+        <h2>Our Products</h2>
+        <p>
+          Explore some of our top products that support your agricultural
+          success:
+        </p>
+        <div class="image-container">
+          <img src="../images/a-1.jpg" alt="Product 1" />
+          <img src="../images/a-2.jpg" alt="Product 2" />
+        </div>
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions, please feel free to
+          <a href="contact.html">contact us</a>. We are here to help!
+        </p>
+      </section>
+    </main>
+    <script src="../js/auth_service.js"></script>
+    <script src="../js/nav.js"></script>
+  </body>
 </html>

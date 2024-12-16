@@ -78,6 +78,7 @@ nav a {
   color: black;
   transition-duration: 0.2s;
   cursor: pointer;
+  text-decoration: none;
 }
 nav a:hover,
 nav a.active {
