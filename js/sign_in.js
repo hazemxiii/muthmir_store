@@ -17,6 +17,8 @@ function signIn() {
   });
 }
 
+signIn();
+
 const auth_switch = document.getElementsByClassName("switch_container")[0];
 auth_switch.addEventListener("click", (e) => {
   switchSignIn();

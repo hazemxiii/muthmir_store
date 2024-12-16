@@ -1,16 +1,65 @@
-const data = {
-  name: "Tomato",
-  avgRating: "3",
-  price: 24,
-  describtion: "Tomato for your graduation project cause yours is dead",
-  imageUrl:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg",
-};
+const url = new URL(window.location.href);
+const params = new URLSearchParams(url.search);
+const id = params.get("id");
 
-const ratings = [
-  { name: "Hazem", rating: 5, comment: "This tomato is great" },
-  { name: "Toxic", rating: 1, comment: "Couldn't rate negative numbers" },
-];
+async function getProductRating(id) {
+  try {
+    var response = await fetch("../php/getProductRatings.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({ id: +id }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed");
+    }
+    var data = await response.json();
+    buildRatings(data);
+  } catch (error) {
+    alert(error);
+  }
+}
+async function getProductInfo(id) {
+  try {
+    var response = await fetch("../php/getProductInfo.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({ id: +id }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed");
+    }
+    var data = await response.json();
+    if ((data["name"] ?? "") == "") {
+      location.href = "../html/product.html?id=1";
+    }
+    buildProductInfo(data);
+  } catch (error) {
+    alert(error);
+  }
+}
+
+getProductInfo(id);
+getProductRating(id);
+
+// const data = {
+//   name: "Tomato",
+//   avgRating: "3",
+//   price: 24,
+//   describtion: "Tomato for your graduation project cause yours is dead",
+//   imageUrl:
+//     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg",
+// };
+
+// const ratings = [
+//   { name: "Hazem", rating: 5, comment: "This tomato is great" },
+//   { name: "Toxic", rating: 1, comment: "Couldn't rate negative numbers" },
+// ];
 
 function createStars(e, rating) {
   const stars = document.createElement("div");
@@ -83,7 +132,7 @@ function buildProductInfo(data) {
   quantitySection.appendChild(input);
 
   productInfo.appendChild(name);
-  createStars(productInfo, 4);
+  createStars(productInfo, +data["avgRating"]);
   productInfo.appendChild(price);
   productInfo.appendChild(describtion);
   productInfo.appendChild(quantitySection);
@@ -96,46 +145,6 @@ function buildProductInfo(data) {
 }
 
 function buildRatings(data) {
-  // <div class="rating_section">
-  //       <h2 class="title">Ratings</h2>
-  //       <div class="rating">
-  //         <div class="user_info">
-  //           <div class="stars">
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-regular fa-star"></i>
-  //           </div>
-  //           <h4 class="name">John doe</h4>
-  //         </div>
-  //         <div class="comment">
-  //           Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex
-  //           aut rem nam, nostrum nesciunt corrupti, fuga error possimus sequi
-  //           natus sed sapiente alias nobis assumenda. Voluptas beatae officia
-  //           tempora.
-  //         </div>
-  //       </div>
-  //       <div class="rating">
-  //         <div class="user_info">
-  //           <div class="stars">
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-solid fa-star"></i>
-  //             <i class="fa-regular fa-star"></i>
-  //           </div>
-  //           <h4 class="name">John doe</h4>
-  //         </div>
-  //         <div class="comment">
-  //           Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex
-  //           aut rem nam, nostrum nesciunt corrupti, fuga error possimus sequi
-  //           natus sed sapiente alias nobis assumenda. Voluptas beatae officia
-  //           tempora.
-  //         </div>
-  //       </div>
-  //     </div>
-
   for (let i = 0; i < data.length; i++) {
     const ratingSection = document.getElementsByClassName("rating_section")[0];
 
@@ -163,5 +172,5 @@ function buildRatings(data) {
   }
 }
 
-buildProductInfo(data);
-buildRatings(ratings);
+// buildProductInfo(data);
+// buildRatings(ratings);
