@@ -65,6 +65,9 @@ nav ul {
   nav .toggle_links {
     display: flex;
   }
+  nav .profile_info.active {
+    top: 0px;
+  }
 }
 nav a {
   text-align: center;

@@ -12,7 +12,7 @@ function switchSignIn() {
 function signIn() {
   LoadUserData().then((data) => {
     if (data != null) {
-      location.href = "../html/product.html";
+      location.href = "../html/index.html";
     }
   });
 }

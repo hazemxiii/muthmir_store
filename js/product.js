@@ -9,14 +9,17 @@ async function getProductRating(id) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams({ id: +id }),
+      body: new URLSearchParams({ id: +id, email: getCookie("email") ?? "" }),
     });
 
     if (!response.ok) {
       throw new Error("Failed");
     }
     var data = await response.json();
-    buildRatings(data);
+    if (data["user"] != null) {
+      buildRatings([data["user"]], true);
+    }
+    buildRatings(data["data"], false);
   } catch (error) {
     alert(error);
   }
@@ -36,7 +39,7 @@ async function getProductInfo(id) {
     }
     var data = await response.json();
     if ((data["name"] ?? "") == "") {
-      location.href = "../html/product.html?id=1";
+      location.href = "../html/index.html";
     }
     buildProductInfo(data);
   } catch (error) {
@@ -61,12 +64,13 @@ getProductRating(id);
 //   { name: "Toxic", rating: 1, comment: "Couldn't rate negative numbers" },
 // ];
 
-function createStars(e, rating) {
+function createStars(e, rating, isAtTop) {
   const stars = document.createElement("div");
   stars.className = "stars";
 
   for (let i = 1; i < 6; i++) {
     const star = document.createElement("i");
+    star.setAttribute("index", i);
     if (i <= rating) {
       star.className = "fa-solid fa-star";
     } else {
@@ -74,8 +78,11 @@ function createStars(e, rating) {
     }
     stars.appendChild(star);
   }
-
-  e.appendChild(stars);
+  if (isAtTop) {
+    e.prepend(stars);
+  } else {
+    e.appendChild(stars);
+  }
 }
 
 function buildProductInfo(data) {
@@ -132,7 +139,7 @@ function buildProductInfo(data) {
   quantitySection.appendChild(input);
 
   productInfo.appendChild(name);
-  createStars(productInfo, +data["avgRating"]);
+  createStars(productInfo, +data["avgRating"], false);
   productInfo.appendChild(price);
   productInfo.appendChild(describtion);
   productInfo.appendChild(quantitySection);
@@ -144,7 +151,7 @@ function buildProductInfo(data) {
   page.appendChild(product);
 }
 
-function buildRatings(data) {
+function buildRatings(data, isCurrentUserRate) {
   for (let i = 0; i < data.length; i++) {
     const ratingSection = document.getElementsByClassName("rating_section")[0];
 
@@ -168,9 +175,48 @@ function buildRatings(data) {
     rating.appendChild(userInfo);
     rating.appendChild(comment);
 
+    if (isCurrentUserRate) {
+      rating.classList.add("current");
+    }
     ratingSection.appendChild(rating);
   }
 }
 
-// buildProductInfo(data);
-// buildRatings(ratings);
+var userRate = 0;
+
+const ratingForm = document.getElementById("rating_form");
+ratingForm.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-star")) {
+    ratingForm.querySelector(".stars").remove();
+    const rate = +e.target.getAttribute("index");
+    userRate = rate;
+    createStars(ratingForm, rate, true);
+  }
+});
+ratingForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const comment = ratingForm.querySelector("input").value;
+
+  try {
+    var response = await fetch("../php/submitRating.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        id: +id,
+        email: getCookie("email") ?? "",
+        token: getCookie("token") ?? "",
+        rate: +userRate,
+        comment: comment,
+      }),
+    });
+    if ((await response.text()) == "success") {
+      location.reload();
+    }
+  } catch (error) {
+    alert("Error");
+  }
+});
+createStars(ratingForm, 0, true);

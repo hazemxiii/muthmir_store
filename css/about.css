@@ -1,196 +1,192 @@
-/* General Reset
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-/* Header Styles *
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
+  background: #4caf50;
+  color: white;
+  padding: 10px 0;
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Main Section Styles *
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 main .about h1 {
-    color: #4CAF50;
-    font-size: 2em;
-    margin-bottom: 10px;
+  color: #4caf50;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 main .about h2 {
-    color: #333;
-    margin-top: 20px;
-    font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+  font-size: 1.5em;
 }
 
 main .about p {
-    margin: 10px 0;
-    line-height: 1.8;
+  margin: 10px 0;
+  line-height: 1.8;
 }
 
 main .about ul {
-    margin: 10px 0;
-    padding: 0 20px;
+  margin: 10px 0;
+  padding: 0 20px;
 }
 
 main .about ul li {
-    margin: 5px 0;
-    list-style: disc;
+  margin: 5px 0;
+  list-style: disc;
 }
 
 main .about a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4caf50;
+  text-decoration: none;
 }
 
 main .about a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Footer Styles *
 footer {
-    text-align: center;
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    margin-top: 20px;
-} */
-
+  text-align: center;
+  background: #4caf50;
+  color: white;
+  padding: 10px 0;
+  margin-top: 20px;
+}
 
 /* General Reset */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 /* Header Styles */
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
+  background: #4caf50;
+  color: white;
+  padding: 10px 0;
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+*/
 
 /* Main Section Styles */
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 main .about h1 {
-    color: #4CAF50;
-    font-size: 2em;
-    margin-bottom: 10px;
+  color: #4caf50;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 main .about h2 {
-    color: #333;
-    margin-top: 20px;
-    font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+  font-size: 1.5em;
 }
 
 main .about p {
-    margin: 10px 0;
-    line-height: 1.8;
+  margin: 10px 0;
+  line-height: 1.8;
 }
 
 main .about ul {
-    margin: 10px 0;
-    padding: 0 20px;
+  margin: 10px 0;
+  padding: 0 20px;
 }
 
 main .about ul li {
-    margin: 5px 0;
-    list-style: disc;
+  margin: 5px 0;
+  list-style: disc;
 }
 
 main .about a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4caf50;
+  text-decoration: none;
 }
 
 main .about a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Image Styles */
 main .about img {
-    width: 100px;
-    height: auto;
-    margin: 10px;
-    transition: transform 0.3s ease;
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  transition: transform 0.3s ease;
 }
 
 main .about img:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* Footer Styles */
 footer {
-    text-align: center;
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    margin-top: 20px;
+  text-align: center;
+  background: #4caf50;
+  color: white;
+  padding: 10px 0;
+  margin-top: 20px;
 }
