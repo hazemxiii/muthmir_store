@@ -1,0 +1,17 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+:root {
+	--main-c: #16a34a;
+	--secondary-c: #22c55e;
+	--text-c: #333333;
+	--bg-c: #f0fdf4;
+}
+
+body {
+	background-color: var(--bg-c);
+	color: var(--text-c);
+}
