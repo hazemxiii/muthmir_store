@@ -36,7 +36,6 @@ async function getProducts() {
   try {
     var response = await fetch("../php/getProducts.php");
     var data = await response.json();
-    console.log(data);
     renderProducts(data);
   } catch (error) {
     alert(error);
