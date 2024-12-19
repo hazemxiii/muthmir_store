@@ -177,6 +177,10 @@ function buildRatings(data, isCurrentUserRate) {
 
     if (isCurrentUserRate) {
       rating.classList.add("current");
+      const deleteBtn = document.createElement("i");
+      deleteBtn.className = "fa-solid fa-trash";
+      deleteBtn.onclick = deleteRating;
+      userInfo.appendChild(deleteBtn);
     }
     ratingSection.appendChild(rating);
   }
@@ -220,3 +224,22 @@ ratingForm.addEventListener("submit", async (e) => {
   }
 });
 createStars(ratingForm, 0, true);
+
+async function deleteRating() {
+  var response = await fetch("../php/deleteRating.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      id: +id,
+      email: getCookie("email") ?? "",
+      token: getCookie("token") ?? "",
+    }),
+  });
+
+  var d = await response.text();
+  if (d == "success") {
+    location.reload();
+  }
+}
