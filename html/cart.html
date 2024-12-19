@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Page</title>
@@ -8,67 +9,77 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/cart.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-  <body>
+<body>
     <nav>
-      <div class="logo">
-        <img src="../images/logo.png" alt="" />
-        <h3>Green Haven</h3>
-      </div>
-      <div class="toggle_links">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="links">
-        <a href="index.html"> <li>Home</li></a>
-        <a href="about.html"> <li>About us</li></a>
-        <a href="contact.html"> <li>Contact us</li></a>
-        <a id="profile_button" href="#">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a>
-        <ul class="profile_info">
-          <li>
-            <div class="image">
-              <img src="../images/logo.png" alt="" />
-            </div>
-          </li>
-          <li>
-            <p>Name</p>
-          </li>
-          <li>
-            <button id="log_out_btn">Log out</button>
-          </li>
+        <div class="logo">
+            <img src="../images/logo.png" alt="" />
+            <h3>Green Haven</h3>
+        </div>
+        <div class="toggle_links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="links">
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a href="about.html">
+                <li>About us</li>
+            </a>
+            <a href="contact.html">
+                <li>Contact us</li>
+            </a>
+            <a id="profile_button" href="#">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <ul class="profile_info">
+                <li>
+                    <div class="image">
+                        <img src="../images/logo.png" alt="" />
+                    </div>
+                </li>
+                <li>
+                    <p>Name</p>
+                </li>
+                <li>
+                    <button id="log_out_btn">Log out</button>
+                </li>
+            </ul>
+            <a href="#" class="active">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
         </ul>
-        <a href="#" class="active">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a>
-      </ul>
     </nav>
 
     <!-- <header id="header"></header> -->
     <div class="checkout-container">
-      <div class="cart-checkout">
-        <h1>Cart</h1>
-      </div>
-      <div class="prod-list"></div>
-      <div class="total-checkout">
-        <span class="total">Total Price: $0</span>
-        <button class="checkout">Proceed To Checkout</button>
-      </div>
+        <div class="cart-checkout">
+            <h1>Cart</h1>
+        </div>
+        <div class="prod-list"></div>
+        <div class="total-checkout">
+            <span class="total">Total Price: $0</span>
+            <button class="checkout">Proceed To Checkout</button>
+        </div>
     </div>
-    <footer id="footer"></footer>
+    <!-- <footer id="footer"></footer> -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2023 Green Haven. All Rights Reserved.</p>
+        </div>
+    </footer>
     <script src="../js/auth_service.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/index.js"></script>
-    <script src="../js/cart.js"></script>
-  </body>
+    <!-- <script src="../js/product.js"></script> -->
+    <!-- <script src="../js/cart.js"></script> -->
+    <script type="module" src="../js/cart.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,4 @@
+console.log("Script loaded");
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
 const id = params.get("id");
@@ -132,6 +133,31 @@ function buildProductInfo(data) {
   const buttonP = document.createElement("p");
   buttonP.innerText = "Add To Cart";
 
+  button.addEventListener("click", () => {
+    let sh_cart = localStorage.getItem("cart");
+    console.log(sh_cart);
+    console.log(id);
+    console.log(input.value);
+    if (!sh_cart) {
+      let cart = { [id]: Number(input.value) };
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+        console.log("True");
+        console.log(input.value);
+        sh_cart = JSON.parse(sh_cart);
+        console.log(sh_cart);
+        if (Object.keys(sh_cart).includes(id)) {
+            console.log("yes")
+            sh_cart[id] += Number(input.value);
+            localStorage.setItem("cart", JSON.stringify(sh_cart));
+      }
+      else {
+        sh_cart[id] = Number(input.value);
+            localStorage.setItem("cart", JSON.stringify(sh_cart));
+      }
+    }
+  });
+
   button.appendChild(cart);
   button.appendChild(buttonP);
 
@@ -243,3 +269,9 @@ async function deleteRating() {
     location.reload();
   }
 }
+
+// Render products when page loads
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("hello");
+});
+
